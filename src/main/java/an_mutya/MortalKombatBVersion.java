@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package mortalkombatbversion;
+package an_mutya;
 
 /**
  *
@@ -15,7 +15,7 @@ public class MortalKombatBVersion {
      */
     public static void main(String[] args) {
         
-        JFrames app = new JFrames();
+        mortalkombatbversion.JFrames app = new mortalkombatbversion.JFrames();
         app.setVisible(true);
        
         /*Human human = new Human (0,80,16,1);

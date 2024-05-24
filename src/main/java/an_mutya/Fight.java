@@ -5,6 +5,9 @@
 package mortalkombatbversion;
 
 //ADD IMAGE!!!
+import players.ShaoKahn;
+import an_mutya.Human;
+import factories.EnemyFabric;
 import java.util.ArrayList;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
