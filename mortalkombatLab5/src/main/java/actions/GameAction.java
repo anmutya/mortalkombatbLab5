@@ -1,5 +1,6 @@
 package actions;
 
+import characters.ActionType;
 import characters.Player;
 import gameComponents.Game;
 
@@ -12,11 +13,14 @@ public class GameAction {
     public LinkedList<ActionType> enemyMoves = new LinkedList<>();
     public ArrayList<Integer> playerMovesInHisTurn = new ArrayList<>();
     public ArrayList<Integer> playerMovesInEnemyTurn = new ArrayList<>();
-    public void performAction(Game game) {
 
+    public void defence(DefenceAction action, Game game) {
+        action.performAction(game);
     }
-
-    public void executeAction(GameAction action, Game game) {
+    public void attack(AtackAction action, Game game) {
+        action.performAction(game);
+    }
+    public void debuff(DebuffAction action, Game game) {
         action.performAction(game);
     }
 

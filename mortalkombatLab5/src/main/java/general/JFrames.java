@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
 
 /**
@@ -869,8 +870,8 @@ public class JFrames extends javax.swing.JFrame {
         jButtonShowRecords.setText("Посмотреть таблицу \nрезультатов");
         jButtonShowRecords.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jButtonShowRecords.addActionListener(this::jButtonOpenTable);
-
-        jLabelGameImage.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("images/mk.png")))); // NOI18N
+        URL iconUrl = this.getClass().getResource("/images/mk.png");
+       jLabelGameImage.setIcon(new javax.swing.ImageIcon(iconUrl)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanelStart);
         jPanelStart.setLayout(jPanel1Layout);
@@ -1054,8 +1055,11 @@ public class JFrames extends javax.swing.JFrame {
                     model.setValueAt(ExcelProvider.getResults().get(i).getPoints(), i, 1);
                 }
             }
+            validate();
         jTableResult.setVisible(true);
+        validate();
         jDialogTableRecords.setVisible(true);
+        validate();
         jDialogTableRecords.setBounds(100, 100, 580, 450);
     }//GEN-LAST:event_jButton2ActionPerformed
 

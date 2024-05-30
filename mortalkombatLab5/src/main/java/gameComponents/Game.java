@@ -4,7 +4,7 @@ import actions.AtackAction;
 import actions.DebuffAction;
 import actions.DefenceAction;
 import actions.GameAction;
-import actions.ActionType;
+import characters.ActionType;
 import characters.Human;
 import characters.Player;
 import characters.fabrics.EnemyFabric;
@@ -81,14 +81,14 @@ public class Game {
     }
 
     public void attack(Game game) {
-        gameAction.executeAction(new AtackAction(), game);
+        gameAction.attack(new AtackAction(), game);
     }
     public void debuff(Game game) {
-        gameAction.executeAction(new DebuffAction(), game);
+        gameAction.debuff(new DebuffAction(), game);
     }
 
     public void defence(Game game){
-        gameAction.executeAction(new DefenceAction(), game);
+        gameAction.defence(new DefenceAction(), game);
     }
 
     /**

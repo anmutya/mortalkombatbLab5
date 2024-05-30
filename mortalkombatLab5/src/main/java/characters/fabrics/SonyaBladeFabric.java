@@ -1,6 +1,6 @@
 package characters.fabrics;
 
-import actions.ActionType;
+import characters.ActionType;
 import characters.Player;
 import characters.SonyaBlade;
 

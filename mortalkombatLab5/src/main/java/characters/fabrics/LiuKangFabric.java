@@ -1,11 +1,12 @@
 package characters.fabrics;
 
-import actions.ActionType;
+import characters.ActionType;
 import characters.LiuKang;
 import characters.Player;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 
 /**
  * @author Мария

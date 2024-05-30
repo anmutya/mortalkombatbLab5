@@ -78,7 +78,7 @@ public class ExcelProvider {
         try (XSSFWorkbook book = new XSSFWorkbook(in)) {
             XSSFSheet sheet = book.getSheetAt(0);
             ArrayList<Result> results = new ArrayList<>();
-            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+            for (int i = 0; i <= sheet.getLastRowNum(); i++) {
                 results.add(new Result(sheet.getRow(i).getCell(1).getStringCellValue(),
                         (int) sheet.getRow(i).getCell(2).getNumericCellValue()));
             }

@@ -1,7 +1,5 @@
 package characters;
 
-import actions.ActionType;
-
 import javax.swing.*;
 
 /**

@@ -4,7 +4,6 @@ import characters.Player;
 import gameComponents.Game;
 
 public class DebuffAction extends GameAction{
-    @Override
     public void performAction(Game game) {
         if (enemyMoves.isEmpty()) {
             setEnemyMoves(game);
