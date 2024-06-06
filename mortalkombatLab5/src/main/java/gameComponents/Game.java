@@ -72,11 +72,9 @@ public class Game {
         ArrayList<Player> enemies = new ArrayList<>();
         int i = 1+ (int) (Math.random() * level);
         for (int j = 0; j < i; j++) {
-            enemies.add(EnemyFabric.createEnemy());
+            enemies.add(EnemyFabric.createEnemy(level));
         }
-        if(human.getLevel() == 3 || human.getLevel() == 5){
-            enemies.add(EnemyFabric.createBoss());
-        }
+        enemies.add(EnemyFabric.createBoss(level));
         return enemies;
     }
 

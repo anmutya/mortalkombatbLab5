@@ -4,6 +4,8 @@ import gameComponents.Game;
 import characters.Human;
 import characters.Player;
 
+import javax.swing.table.DefaultTableModel;
+
 public class Manager {
     private Game game;
     public Manager() {
@@ -12,7 +14,6 @@ public class Manager {
     public void setLocationForGame(int location) {
         game = new Game(location);
     }
-
     public Game getGame() {
         return game;
     }

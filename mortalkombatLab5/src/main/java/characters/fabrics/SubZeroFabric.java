@@ -12,9 +12,9 @@ import javax.swing.*;
 public class SubZeroFabric implements EnemyFabricInterface {
 
     @Override
-    public Player create() {
+    public Player create(int level) {
         Player enemy;
-        enemy = new SubZero(1, 60, 16, ActionType.HIT,
+        enemy = new SubZero(level, 60, 16, ActionType.HIT,
                 new ImageIcon(getClass().getResource("/images/subzero.png")));
         return enemy;
     }

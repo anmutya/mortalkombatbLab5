@@ -11,17 +11,14 @@ import java.util.ArrayList;
 
 public class ExcelProvider {
 
-    private static final ArrayList<Result> results;
+    private static ArrayList<Result> results;
 
-    static {
+    public static ArrayList<Result> getResults() {
         try {
             results = readFromExcel();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static ArrayList<Result> getResults() {
         return results;
     }
 
@@ -41,9 +38,9 @@ public class ExcelProvider {
 
             for (int i = 0; i < Math.min(10, results.size()); i++) {
                 Result result = results.get(i);
-                XSSFRow row = sheet.getRow(i + 1);
+                XSSFRow row = sheet.getRow(i);
                 if (row == null) {
-                    row = sheet.createRow(i + 1);
+                    row = sheet.createRow(i);
                 }
                 if (row.getCell(2) == null || row.getCell(2).getNumericCellValue() < result.getPoints()) {
                     row.createCell(0, CellType.NUMERIC).setCellValue(i + 1);

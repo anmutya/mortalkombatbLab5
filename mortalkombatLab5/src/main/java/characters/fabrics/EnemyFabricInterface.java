@@ -7,5 +7,5 @@ import characters.Player;
  * @author Мария
  */
 public interface EnemyFabricInterface {
-    Player create();
+    Player create(int level);
 }

@@ -14,10 +14,10 @@ import java.net.URL;
 public class LiuKangFabric implements EnemyFabricInterface {
 
     @Override
-    public Player create() {
+    public Player create(int level) {
         Player enemy;
         Toolkit tk = Toolkit.getDefaultToolkit();
-        enemy = new LiuKang(1, 70, 20, ActionType.HIT,
+        enemy = new LiuKang(level, 70, 20, ActionType.HIT,
                 new ImageIcon(getClass().getResource("/images/liukang.png")));
         return enemy;
     }

@@ -12,8 +12,8 @@ import javax.swing.*;
 public class SonyaBladeFabric implements EnemyFabricInterface {
 
     @Override
-    public Player create() {
-        Player enemy =  new SonyaBlade(1, 80, 16, ActionType.HIT,
+    public Player create(int level) {
+        Player enemy =  new SonyaBlade(level, 80, 16, ActionType.HIT,
                 new ImageIcon(getClass().getResource("/images/sonya blade.png")));
         enemy.setBoss(true);
         return enemy;

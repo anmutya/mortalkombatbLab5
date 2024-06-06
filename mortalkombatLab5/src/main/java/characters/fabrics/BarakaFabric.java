@@ -15,11 +15,11 @@ import java.net.URL;
 public class BarakaFabric implements EnemyFabricInterface {
 
     @Override
-    public Player create() {
+    public Player create(int level) {
         Player enemy;
         URL iconUrl = this.getClass().getResource("/images/baraka.png");
         Toolkit tk = Toolkit.getDefaultToolkit();
-        enemy = new Baraka(1, 100, 12, ActionType.HIT,
+        enemy = new Baraka(level, 100, 12, ActionType.HIT,
                 new ImageIcon(tk.getImage(iconUrl)));
         return enemy;
     }

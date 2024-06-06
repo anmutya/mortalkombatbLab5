@@ -1012,13 +1012,10 @@ public class JFrames extends javax.swing.JFrame {
         try {
             manager.getGame().gameOver(jTextFieldPlayerName.getText());
             if (!jTextFieldPlayerName.getText().isEmpty()) {
-                DefaultTableModel model = (DefaultTableModel) jTableResult.getModel();
-                for (int i = 0; i < manager.getGame().getResults().size(); i++) {
-                    if (i < 10) {
-                        model.setValueAt(manager.getGame().getResults().get(i).getName(), i, 0);
-                        model.setValueAt(manager.getGame().getResults().get(i).getPoints(), i, 1);
-                    }
-                }
+                DefaultTableModel model = new DefaultTableModel();
+                model = buildTree(model);
+                jTableResult.setModel(model);
+                jTableResult.setVisible(true);
                 validate();
                 jTableResult.setVisible(true);
                 jDialogTableRecords.setVisible(true);
@@ -1047,17 +1044,11 @@ public class JFrames extends javax.swing.JFrame {
      * Обработчик кнопки открытия таблицы рекордов, выдает окно с таблицей
      * рекордов
      */
-    private void jButtonOpenTable(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTableResult.getModel();
-            for (int i = ExcelProvider.getResults().size() - 1; i >= 0; i--) {
-                if (i < 10) {
-                    model.setValueAt(ExcelProvider.getResults().get(i).getName(), i, 0);
-                    model.setValueAt(ExcelProvider.getResults().get(i).getPoints(), i, 1);
-                }
-            }
-            validate();
+    private void jButtonOpenTable(java.awt.event.ActionEvent evt) {
+        DefaultTableModel model = new DefaultTableModel();
+        model = buildTree(model);
+        jTableResult.setModel(model);
         jTableResult.setVisible(true);
-        validate();
         jDialogTableRecords.setVisible(true);
         validate();
         jDialogTableRecords.setBounds(100, 100, 580, 450);
@@ -1106,7 +1097,6 @@ public class JFrames extends javax.swing.JFrame {
      * предмета
      */
     private void jButtonCantUseItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-
         jDialogCantUseItem.dispose();
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -1203,7 +1193,16 @@ public class JFrames extends javax.swing.JFrame {
             jDialogWinRound.setBounds(100, 100, 680, 550);
         }
     }
-
+    public DefaultTableModel buildTree(DefaultTableModel model){
+        model.addColumn("Имя");
+        model.addColumn("Кол-во баллов");
+        for (int i = 0; i < ExcelProvider.getResults().size() ; i++) {
+            if (i<10) {
+                model.addRow(new Object[]{ExcelProvider.getResults().get(i).getName(),ExcelProvider.getResults().get(i).getPoints() });
+            }
+        }
+        return model;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField jTextFieldCountLocation;
     private javax.swing.JDialog jDialogChoseLocation;
